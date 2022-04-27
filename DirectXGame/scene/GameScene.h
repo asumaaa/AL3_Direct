@@ -11,10 +11,25 @@
 #include "WorldTransform.h"
 #include <DirectXMath.h>
 
+
 /// <summary>
 /// ゲームシーン
 /// </summary>
 class GameScene {
+
+	//テクスチャハンドル
+	uint32_t textureHandle_ = 0;
+
+	// 3Dモデル
+	Model* model_ = nullptr;
+
+	//変数
+	int32_t value_ = 0;
+
+	//ワールドトランスフォーム
+	WorldTransform worldTransform_[10];
+	//ビュープロジェクション
+	ViewProjection viewProjection_;
 
   public: // メンバ関数
 	/// <summary>

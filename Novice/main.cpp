@@ -1,6 +1,6 @@
 ﻿#include <Novice.h>
 
-const char kWindowTitle[] = "学籍番号";
+const char kWindowTitle[] = "LE2B_02_アスマ_ショウタ";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -11,6 +11,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
 	char preKeys[256] = {0};
+
+	float circle[3] = {100.0f, 100.0f, 1};
+	float circleR = 32.0f;
+
+	float move[3][3] = {
+	  {1.0f, 0.0f, 100.0f},
+      {0.0f, 1.0f, 100.0f},
+      {0.0f, 0.0f, 1.0f}
+    };
+
+	for (int i = 0;i < 4;i++) {
+		circle[i] = move[0][0] * 
+	}
+	
+	int speed = 10;
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -24,6 +39,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
+		
+		
 
 		///
 		/// ↑更新処理ここまで
@@ -32,6 +49,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
+		
+		Novice::DrawEllipse(circle[0], circle[1], circleR, circleR, 0.0f, WHITE, kFillModeSolid);
 
 		///
 		/// ↑描画処理ここまで
